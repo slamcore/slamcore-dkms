@@ -1,0 +1,26 @@
+diff -Naur a/tegra/drivers/iio/accel/hid-sensor-accel-3d.c b/tegra/drivers/iio/accel/hid-sensor-accel-3d.c
+--- a/tegra/drivers/iio/accel/hid-sensor-accel-3d.c	2021-08-04 10:01:21.225034363 +0000
++++ b/tegra/drivers/iio/accel/hid-sensor-accel-3d.c	2021-08-04 11:10:13.753065733 +0000
+@@ -251,6 +251,7 @@
+ 			hid_sensor_convert_timestamp(
+ 					&accel_state->common_attributes,
+ 					*(int64_t *)raw_data);
++		ret = 0;
+ 	break;
+ 	default:
+ 		break;
+diff -Naur a/tegra/drivers/iio/gyro/hid-sensor-gyro-3d.c b/tegra/drivers/iio/gyro/hid-sensor-gyro-3d.c
+--- a/tegra/drivers/iio/gyro/hid-sensor-gyro-3d.c	2021-08-04 10:01:21.233034543 +0000
++++ b/tegra/drivers/iio/gyro/hid-sensor-gyro-3d.c	2021-08-04 11:14:14.254385334 +0000
+@@ -247,7 +247,10 @@
+ 		ret = 0;
+ 	break;
+ 	case HID_USAGE_SENSOR_TIME_TIMESTAMP:	// usec->nsec
+-		gyro_state->timestamp = (*(int64_t *)raw_data)*1000;
++		gyro_state->timestamp =
++			hid_sensor_convert_timestamp(
++					&gyro_state->common_attributes,
++					*(int64_t *)raw_data);
+ 		ret = 0;
+ 	break;
+ 	default:
