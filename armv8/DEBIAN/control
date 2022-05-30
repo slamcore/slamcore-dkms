@@ -1,7 +1,7 @@
 Package: slamcore-dkms
-Version: 21.06.1
+Version: 22.01.2
 Architecture: arm64
-Installed-Size: 21315
+Installed-Size: 21319
 Depends: dkms (>= 1.95)
 Priority: optional
 Maintainer: Thomas Bastiani <thomas@slamcore.com>
