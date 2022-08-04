@@ -7,7 +7,7 @@ To simplify the process of using SLAMcore SDK this repository provides a DKMS pa
 The package has been tested and is compatible with:
 * Ubuntu 18.04 (64-bit) on Raspberry Pi 4.
 * Nvidia Jetson platforms running L4T versions 32.4.4 through to 32.6.1.
-* Ubuntu 20.04 (amd64) running the 5.13 HWE kernel.
+* Ubuntu 20.04 (amd64) running the 5.13 or 5.15 HWE kernel.
 
 ## Installation
 
