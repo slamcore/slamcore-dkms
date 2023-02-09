@@ -27,6 +27,31 @@ And then reboot in order to complete the installation:
 sudo reboot
 ```
 
+## Troubleshooting
+
+### Machine-Owner Key (MOK) enrollment process
+
+Recent versions of BIOS / Machines include the MOK mechanism to verify that the code is actually installed by the user and not a malicious actor. This means that when users try to install our `slamcore-dkms` debian package, they are presented with this screen:
+
+<img src="https://user-images.githubusercontent.com/70266392/217847704-4fa122e3-b39a-4a21-844f-a7dc57dfe698.png" width="40%">
+<img src="https://user-images.githubusercontent.com/70266392/217847791-fc7737d2-8519-4598-aade-f10940cc8368.png" width="40%">
+
+#### Solution
+
+Follow the instructions presented and press OK on the previous screens. A password prompt will appear where you have to enter a new password. This password will be requested by the BIOS during the next reboot. At this stage, Slamcore tools that require this kernel module should still **not** be functional.
+
+After this, reboot your machine. You may get the following screen (it might defer depending on BIOS / manufacturer):
+
+<img src="https://user-images.githubusercontent.com/70266392/217848566-a6b07803-3866-43d8-8b35-83b276ee7afa.png" width="40%">
+
+Select the "Enroll MOK" option and continue. You will be prompted to enter the password you created previously.
+
+Finally you should reach a screen similar to this:
+
+<img src="https://user-images.githubusercontent.com/70266392/217849173-c31abe6a-4984-4cbf-b238-dda1496642cd.png" width="40%">
+
+Select "Continue boot". Your machine should now boot, and the Slamcore tools should now work as expected with the RealSense camera.
+
 ## License
 
 This repository consists of sources from various [Linux kernel](https://developer.nvidia.com/embedded/l4t/r32_release_v6.1/sources/t186/public_sources.tbz2) [trees](http://ports.ubuntu.com/ubuntu-ports/ubuntu-ports/ubuntu-ports/pool/universe) as well as patches that either come directly from or have been modified based on patches from [librealsense2-dkms](https://github.com/IntelRealsense/librealsense).
