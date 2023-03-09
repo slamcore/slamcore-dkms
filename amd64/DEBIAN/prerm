@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=slamcore
-VERSION=22.02.0
+VERSION=23.02.1
 
 set -e
 

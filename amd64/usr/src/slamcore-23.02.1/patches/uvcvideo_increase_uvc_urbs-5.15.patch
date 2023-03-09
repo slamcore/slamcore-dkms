@@ -1,0 +1,15 @@
+diff -Naur a/5.15/drivers/media/usb/uvc/uvcvideo.h b/5.15/drivers/media/usb/uvc/uvcvideo.h
+--- a/5.15/drivers/media/usb/uvc/uvcvideo.h
++++ b/5.15/drivers/media/usb/uvc/uvcvideo.h
+@@ -173,7 +173,7 @@
+ #define DRIVER_VERSION		"1.1.1"
+ 
+ /* Number of isochronous URBs. */
+-#define UVC_URBS		5
++#define UVC_URBS		16
+ /* Maximum number of packets per URB. */
+ #define UVC_MAX_PACKETS		32
+ /* Maximum status buffer size in bytes of interrupt URB. */
+-- 
+2.17.1
+

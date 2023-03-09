@@ -1,0 +1,22 @@
+diff -Naur a/5.14/drivers/iio/accel/hid-sensor-accel-3d.c b/5.14/drivers/iio/accel/hid-sensor-accel-3d.c
+--- a/5.14/drivers/iio/accel/hid-sensor-accel-3d.c	2022-09-19 21:29:25.117078382 +0100
++++ b/5.14/drivers/iio/accel/hid-sensor-accel-3d.c	2022-09-19 21:33:16.437756246 +0100
+@@ -280,6 +280,7 @@
+ 			hid_sensor_convert_timestamp(
+ 					&accel_state->common_attributes,
+ 					*(int64_t *)raw_data);
++		ret = 0;
+ 	break;
+ 	default:
+ 		break;
+diff -Naur a/5.14/drivers/iio/gyro/hid-sensor-gyro-3d.c b/5.14/drivers/iio/gyro/hid-sensor-gyro-3d.c
+--- a/5.14/drivers/iio/gyro/hid-sensor-gyro-3d.c	2022-09-19 21:29:25.117078382 +0100
++++ b/5.14/drivers/iio/gyro/hid-sensor-gyro-3d.c	2022-09-19 21:33:16.437756246 +0100
+@@ -231,6 +231,7 @@
+ 		gyro_state->timestamp =
+ 			hid_sensor_convert_timestamp(&gyro_state->common_attributes,
+ 						     *(s64 *)raw_data);
++		ret = 0;
+ 	break;
+ 	default:
+ 		break;
