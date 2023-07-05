@@ -1,0 +1,39 @@
+diff -Naur a/tegra/drivers/media/usb/uvc/uvc_driver.c b/tegra/drivers/media/usb/uvc/uvc_driver.c
+--- a/tegra/drivers/media/usb/uvc/uvc_driver.c	2023-05-09 21:16:42.659153179 +0100
++++ b/tegra/drivers/media/usb/uvc/uvc_driver.c	2023-05-09 21:24:18.457567612 +0100
+@@ -166,6 +166,11 @@
+ 		.fcc		= V4L2_PIX_FMT_Y12I,
+ 	},
+ 	{
++		.name		= "Greyscale 16 L/R (Y16I)",
++		.guid		= UVC_GUID_FORMAT_Y16I,
++		.fcc		= V4L2_PIX_FMT_Y16I,
++	},
++	{
+ 		.name		= "Depth data 16-bit (Z16)",
+ 		.guid		= UVC_GUID_FORMAT_Z16,
+ 		.fcc		= V4L2_PIX_FMT_Z16,
+diff -Naur a/tegra/drivers/media/usb/uvc/uvcvideo.h b/tegra/drivers/media/usb/uvc/uvcvideo.h
+--- a/tegra/drivers/media/usb/uvc/uvcvideo.h	2023-05-09 21:16:42.659153179 +0100
++++ b/tegra/drivers/media/usb/uvc/uvcvideo.h	2023-05-09 21:24:18.457567612 +0100
+@@ -139,6 +139,9 @@
+ #define UVC_GUID_FORMAT_Y12I \
+ 	{ 'Y',  '1',  '2',  'I', 0x00, 0x00, 0x10, 0x00, \
+ 	 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71}
++#define UVC_GUID_FORMAT_Y16I \
++	{ 'Y',  '1',  '6',  'I', 0x00, 0x00, 0x10, 0x00, \
++	 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71}
+ #define UVC_GUID_FORMAT_Z16 \
+ 	{ 'Z',  '1',  '6',  ' ', 0x00, 0x00, 0x10, 0x00, \
+ 	 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71}
+diff -Naur a/tegra/include-overrides/uapi/linux/videodev2.h b/tegra/include-overrides/uapi/linux/videodev2.h
+--- a/tegra/include-overrides/uapi/linux/videodev2.h	2023-05-09 21:16:42.667153362 +0100
++++ b/tegra/include-overrides/uapi/linux/videodev2.h	2023-05-09 21:24:18.461567702 +0100
+@@ -740,6 +740,7 @@
+ #define V4L2_PIX_FMT_S5C_UYVY_JPG v4l2_fourcc('S', '5', 'C', 'I') /* S5C73M3 interleaved UYVY/JPEG */
+ #define V4L2_PIX_FMT_Y8I      v4l2_fourcc('Y', '8', 'I', ' ') /* Greyscale 8-bit L/R interleaved */
+ #define V4L2_PIX_FMT_Y12I     v4l2_fourcc('Y', '1', '2', 'I') /* Greyscale 12-bit L/R interleaved */
++#define V4L2_PIX_FMT_Y16I     v4l2_fourcc('Y', '1', '6', 'I') /* Greyscale 16-bit L/R interleaved */
+ #define V4L2_PIX_FMT_Z16      v4l2_fourcc('Z', '1', '6', ' ') /* Depth data 16-bit */
+ #define V4L2_PIX_FMT_MT21C    v4l2_fourcc('M', 'T', '2', '1') /* Mediatek compressed block mode  */
+ #define V4L2_PIX_FMT_INZI     v4l2_fourcc('I', 'N', 'Z', 'I') /* Intel Planar Greyscale 10-bit and Depth 16-bit */

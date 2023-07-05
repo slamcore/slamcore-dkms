@@ -1,0 +1,12 @@
+diff -Naur a/5.19/drivers/media/usb/uvc/uvcvideo.h b/5.19/drivers/media/usb/uvc/uvcvideo.h
+--- a/5.19/drivers/media/usb/uvc/uvcvideo.h	2022-07-31 22:03:01.000000000 +0100
++++ b/5.19/drivers/media/usb/uvc/uvcvideo.h	2023-04-27 12:34:37.331827746 +0100
+@@ -186,7 +186,7 @@
+ #define DRIVER_VERSION		"1.1.1"
+ 
+ /* Number of isochronous URBs. */
+-#define UVC_URBS		5
++#define UVC_URBS		16
+ /* Maximum number of packets per URB. */
+ #define UVC_MAX_PACKETS		32
+ /* Maximum status buffer size in bytes of interrupt URB. */

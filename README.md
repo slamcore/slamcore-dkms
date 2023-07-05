@@ -7,8 +7,10 @@ To simplify the process of using Slamcore SDK this repository provides a DKMS pa
 The package has been tested and is compatible with:
 * Ubuntu 18.04 (64-bit) on Raspberry Pi 4.
 * Nvidia Jetson platforms running L4T versions 32.4.4 through to 32.6.1.
-* Ubuntu 20.04 (amd64) running the 5.13 or 5.15 HWE kernel.
 * Ubuntu 20.04 (amd64) running the 5.14 OEM kernel.
+* Ubuntu 20.04 (amd64) running the 5.13 or 5.15 HWE kernel.
+* Ubuntu 22.04 (amd64) running the 5.15 generic kernel.
+* Ubuntu 22.04 (amd64) running the 5.19 HWE kernel.
 
 ## Installation
 
@@ -20,6 +22,9 @@ sudo apt install ./slamcore-dkms_*-bionic_arm64.deb
 
 # On Ubuntu 20.04 for amd64
 sudo apt install ./slamcore-dkms_*-focal_amd64.deb
+
+# On Ubuntu 22.04 for amd64
+sudo apt install ./slamcore-dkms_*-jammy_amd64.deb
 ```
 
 And then reboot in order to complete the installation:

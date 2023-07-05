@@ -1,0 +1,12 @@
+diff -Naur a/tegra/drivers/media/usb/uvc/uvcvideo.h b/tegra/drivers/media/usb/uvc/uvcvideo.h
+--- a/tegra/drivers/media/usb/uvc/uvcvideo.h	2023-05-09 21:16:42.659153179 +0100
++++ b/tegra/drivers/media/usb/uvc/uvcvideo.h	2023-05-09 21:38:19.580785603 +0100
+@@ -208,7 +208,7 @@
+ #define DRIVER_VERSION		"1.1.1"
+ 
+ /* Number of isochronous URBs. */
+-#define UVC_URBS		5
++#define UVC_URBS		16
+ /* Maximum number of packets per URB. */
+ #define UVC_MAX_PACKETS		32
+ /* Maximum status buffer size in bytes of interrupt URB. */
