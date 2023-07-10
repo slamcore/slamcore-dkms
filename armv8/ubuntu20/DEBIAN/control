@@ -1,9 +1,9 @@
 Package: slamcore-dkms
-Version: 23.04.0
+Version: 23.04.1
 Architecture: all
 Installed-Size: 22374
 Depends: dkms (>= 1.95)
-Provides: slamcore-modules (= 23.04.0)
+Provides: slamcore-modules (= 23.04.1)
 Priority: optional
 Maintainer: Thomas Bastiani <thomas@slamcore.com>
 Section: kernel

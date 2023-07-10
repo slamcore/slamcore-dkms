@@ -1,5 +1,5 @@
 Package: slamcore-dkms
-Version: 23.04.0
+Version: 23.04.1
 Architecture: arm64
 Installed-Size: 21162
 Depends: dkms (>= 1.95)
