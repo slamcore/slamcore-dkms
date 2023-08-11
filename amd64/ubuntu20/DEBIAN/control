@@ -1,9 +1,9 @@
 Package: slamcore-dkms
-Version: 23.04.1
+Version: 23.05.2
 Architecture: all
 Installed-Size: 34075
 Depends: dkms (>= 1.95)
-Provides: slamcore-modules (= 23.04.1)
+Provides: slamcore-modules (= 23.05.2)
 Priority: optional
 Maintainer: Thomas Bastiani <thomas@slamcore.com>
 Section: kernel
@@ -11,9 +11,9 @@ Homepage: https://github.com/slamcore/slamcore-dkms
 Description: Modified kernel modules for Intel RealSense cameras
  .
  The package has been tested and is compatible with:
-   * Ubuntu 20.04 (64-bit) on x86 platforms running either a 5.13, 5.14 or
-     5.15 kernel.
-   * Ubuntu 22.04 (64-bit) on x86 platforms running either a 5.15 or a 5.19
+   * Ubuntu 20.04 (64-bit) on x86 platforms running a 5.13, 5.14 or a 5.15
+     kernel.
+   * Ubuntu 22.04 (64-bit) on x86 platforms running a 5.15, 5.19 or a 6.2
      kernel.
  .
  The package uses the DKMS system to automatically compile and install the

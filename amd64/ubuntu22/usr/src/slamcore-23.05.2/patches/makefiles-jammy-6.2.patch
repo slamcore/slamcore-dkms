@@ -1,0 +1,66 @@
+diff -Naur a/6.2/drivers/iio/accel/hid-sensor-accel-3d.c b/6.2/drivers/iio/accel/hid-sensor-accel-3d.c
+--- a/6.2/drivers/iio/accel/hid-sensor-accel-3d.c	2023-02-19 22:24:22.000000000 +0000
++++ b/6.2/drivers/iio/accel/hid-sensor-accel-3d.c	2023-08-10 16:56:57.374581361 +0100
+@@ -462,3 +462,4 @@
+ MODULE_AUTHOR("Srinivas Pandruvada <srinivas.pandruvada@intel.com>");
+ MODULE_LICENSE("GPL");
+ MODULE_IMPORT_NS(IIO_HID);
++MODULE_VERSION("slamcore");
+diff -Naur a/6.2/drivers/iio/gyro/hid-sensor-gyro-3d.c b/6.2/drivers/iio/gyro/hid-sensor-gyro-3d.c
+--- a/6.2/drivers/iio/gyro/hid-sensor-gyro-3d.c	2023-02-19 22:24:22.000000000 +0000
++++ b/6.2/drivers/iio/gyro/hid-sensor-gyro-3d.c	2023-08-10 16:56:57.374581361 +0100
+@@ -396,3 +396,4 @@
+ MODULE_AUTHOR("Srinivas Pandruvada <srinivas.pandruvada@intel.com>");
+ MODULE_LICENSE("GPL");
+ MODULE_IMPORT_NS(IIO_HID);
++MODULE_VERSION("slamcore");
+diff -Naur a/6.2/drivers/media/usb/uvc/Makefile b/6.2/drivers/media/usb/uvc/Makefile
+--- a/6.2/drivers/media/usb/uvc/Makefile	2023-02-19 22:24:22.000000000 +0000
++++ b/6.2/drivers/media/usb/uvc/Makefile	2023-08-10 16:56:57.374581361 +0100
+@@ -5,3 +5,8 @@
+ uvcvideo-objs  += uvc_entity.o
+ endif
+ obj-$(CONFIG_USB_VIDEO_CLASS) += uvcvideo.o
++
++#Librealsense-dkms addition
++CONFIG_MODULE_SIG=n
++CC := ${CC} -I ${M}/../../../../include-overrides
++ccflags-y := -DDRIVER_VERSION_SUFFIX=\"${DRIVER_VERSION_SUFFIX}\"
+diff -Naur a/6.2/drivers/media/usb/uvc/uvcvideo.h b/6.2/drivers/media/usb/uvc/uvcvideo.h
+--- a/6.2/drivers/media/usb/uvc/uvcvideo.h	2023-02-19 22:24:22.000000000 +0000
++++ b/6.2/drivers/media/usb/uvc/uvcvideo.h	2023-08-10 16:56:57.374581361 +0100
+@@ -45,8 +45,13 @@
+  * Driver specific constants.
+  */
+ 
+-#define DRIVER_VERSION		"1.1.1"
++/* Librealsense dkms amendments*/
++#ifndef DRIVER_VERSION_SUFFIX
++#define DRIVER_VERSION_SUFFIX
++#endif
+ 
++#define DRIVER_VERSION		"1.1.2" DRIVER_VERSION_SUFFIX
++ 
+ /* Number of isochronous URBs. */
+ #define UVC_URBS		5
+ /* Maximum number of packets per URB. */
+diff -Naur a/6.2/drivers/media/v4l2-core/Makefile b/6.2/drivers/media/v4l2-core/Makefile
+--- a/6.2/drivers/media/v4l2-core/Makefile	2023-02-19 22:24:22.000000000 +0000
++++ b/6.2/drivers/media/v4l2-core/Makefile	2023-08-10 16:56:57.374581361 +0100
+@@ -2,6 +2,8 @@
+ #
+ # Makefile for the V4L2 core
+ #
++# Librealsense dkms appendix
++CC := ${CC} -I ${M}/../../../include-overrides -I ${M}/../tuners -I ${M}/../dvb-core -I ${M}/../dvb-frontends
+ 
+ ccflags-y += -I$(srctree)/drivers/media/dvb-frontends
+ ccflags-y += -I$(srctree)/drivers/media/tuners
+diff -Naur a/6.2/drivers/media/v4l2-core/v4l2-dev.c b/6.2/drivers/media/v4l2-core/v4l2-dev.c
+--- a/6.2/drivers/media/v4l2-core/v4l2-dev.c	2023-02-19 22:24:22.000000000 +0000
++++ b/6.2/drivers/media/v4l2-core/v4l2-dev.c	2023-08-10 16:56:57.374581361 +0100
+@@ -1208,3 +1208,4 @@
+ MODULE_DESCRIPTION("Video4Linux2 core driver");
+ MODULE_LICENSE("GPL");
+ MODULE_ALIAS_CHARDEV_MAJOR(VIDEO_MAJOR);
++MODULE_VERSION("slamcore");

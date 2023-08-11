@@ -12,6 +12,7 @@ The package has been tested and is compatible with:
 * Ubuntu 20.04 (amd64) running the 5.13 or 5.15 HWE kernel.
 * Ubuntu 22.04 (amd64) running the 5.15 generic kernel.
 * Ubuntu 22.04 (amd64) running the 5.19 HWE kernel.
+* Ubuntu 22.04 (amd64) running the 6.2 HWE kernel.
 
 ## Installation
 
