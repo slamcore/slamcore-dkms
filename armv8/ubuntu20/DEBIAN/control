@@ -1,9 +1,9 @@
 Package: slamcore-dkms
-Version: 23.05.2
+Version: 23.10.1
 Architecture: all
-Installed-Size: 22374
+Installed-Size: 27896
 Depends: dkms (>= 1.95)
-Provides: slamcore-modules (= 23.05.2)
+Provides: slamcore-modules (= 23.10.1)
 Priority: optional
 Maintainer: Thomas Bastiani <thomas@slamcore.com>
 Section: kernel
@@ -12,7 +12,7 @@ Description: Modified kernel modules for Intel RealSense cameras
  .
  The package has been tested and is compatible with Ubuntu 18.04 and 20.04
  (64-bit) on Raspberry Pi 4 as well as most of the Nvidia Jetson platforms
- running L4T 32.4.4 through to 35.1.0.
+ running L4T 32.4.4 through to 36.2.0.
  .
  The package uses the DKMS system to automatically compile and install the
  modified driver on your current and future kernels.
