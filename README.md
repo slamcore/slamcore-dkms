@@ -2,6 +2,8 @@
 
 To simplify the process of using Slamcore SDK this repository provides a DKMS package that adds support for Intel RealSense D435i and D455 cameras on various ARM platforms. We may also support some of the newer kernels on x86 platforms.
 
+Note: The Ubuntu 22.04 arm64 package provides extra kernel modules that are not enabled by default in Jetpack 6 including `gs_usb.ko` (`CAN_GS_USB`).
+
 ### Requirements
 
 The package has been tested and is compatible with:
@@ -9,10 +11,11 @@ The package has been tested and is compatible with:
 * Ubuntu 20.04 (64-bit) on Raspberry Pi 4.
 * Nvidia Jetson platforms running L4T versions 32.4.4 through to 36.2.0.
 * Ubuntu 20.04 (amd64) running the 5.14 OEM kernel.
-* Ubuntu 20.04 (amd64) running the 5.13 or 5.15 HWE kernel.
+* Ubuntu 20.04 (amd64) running the 5.13 or 5.15 HWE kernels.
 * Ubuntu 22.04 (amd64) running the 5.15 generic kernel.
-* Ubuntu 22.04 (amd64) running the 5.19 HWE kernel.
-* Ubuntu 22.04 (amd64) running the 6.2 HWE kernel.
+* Ubuntu 22.04 (amd64) running the 5.19, 6.2 or 6.5 HWE kernels.
+* Ubuntu 22.04 (amd64) running the 6.1 OEM kernel.
+* Ubuntu 24.04 (amd64) running the 6.8 generic kernel.
 
 ## Installation
 
@@ -28,11 +31,14 @@ sudo apt install ./slamcore-dkms_*-focal_arm64.deb
 # On Ubuntu 20.04 for amd64
 sudo apt install ./slamcore-dkms_*-focal_amd64.deb
 
+# On Jetpack 6 arm64 platforms
+sudo apt install ./slamcore-dkms_*-jammy_arm64.deb
+
 # On Ubuntu 22.04 for amd64
 sudo apt install ./slamcore-dkms_*-jammy_amd64.deb
 
-# On Jetpack 6 arm64 platforms
-sudo apt install ./slamcore-dkms_*-jammy_arm64.deb
+# On Ubuntu 24.04 for amd64
+sudo apt install ./slamcore-dkms_*-noble_amd64.deb
 ```
 
 And then reboot in order to complete the installation:
